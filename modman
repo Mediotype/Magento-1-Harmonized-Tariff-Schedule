@@ -1,0 +1,4 @@
+app/etc/modules/Mediotype_HarmonizedTariffSchedule.xml app/etc/modules/Mediotype_HarmonizedTariffSchedule.xml
+app/code/community/Mediotype/HarmonizedTariffSchedule/ app/code/community/Mediotype/HarmonizedTariffSchedule/
+app/design/adminhtml/base/default/layout/mediotype/HarmonizedTariffSchedule.xml app/design/adminhtml/base/default/layout/mediotype/HarmonizedTariffSchedule.xml
+Mediotype_HarmonizedTariffSchedule.xml var/connect/Mediotype_HarmonizedTariffSchedule.xml

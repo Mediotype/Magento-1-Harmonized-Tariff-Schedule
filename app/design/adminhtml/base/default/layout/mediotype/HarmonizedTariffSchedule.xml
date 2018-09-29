@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * Magento / Mediotype Harmonized Tariff Schedule Module
+ * Designed to handle Harmonized Codes and Commercial Invoice Generation
+ *
+ *
+ * @category    Mediotype
+ * @package     HarmonizedTariffSchedule
+ * @copyright   Copyright (c) 2014 Mediotype (http://www.mediotype.com)
+ *              Copyright, 2014, Mediotype, LLC - US license
+ * @author      Joel Hart <joel@mediotype.com>
+ */
+
+-->
+<layout version="0.1.0">
+
+    <harmonized_tariff_schedule_adminhtml_manage_index>
+        <reference name="content">
+            <block type="hts/adminhtml_manage_code_instructions" name="code_instructions"/>
+            <block type="hts/adminhtml_manage_code" name="code_grid"/>
+        </reference>
+    </harmonized_tariff_schedule_adminhtml_manage_index>
+
+    <harmonized_tariff_schedule_adminhtml_hts_index>
+        <reference name="content">
+            <block type="hts/adminhtml_import_import_instructions" name="import_instructions"/>
+            <block type="hts/adminhtml_import_import_edit" name="hts_import_csv"/>
+            <block type="hts/adminhtml_import_import" name="hts_importing"/>
+        </reference>
+    </harmonized_tariff_schedule_adminhtml_hts_index>
+
+</layout>

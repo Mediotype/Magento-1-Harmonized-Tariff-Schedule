@@ -1,0 +1,30 @@
+{
+    "sku":{
+        "required":true,
+        "regex":"/.+/",
+        "trim":true
+    },
+    "country_of_manufacture":{
+        "required":true,
+        "regex":"/.+/",
+        "trim":true
+    },
+    "hts":{
+        "required":true,
+        "regex":"/.+/",
+        "trim":true,
+        "htccheck":true
+    },
+    "hts_customs_uom":{
+        "required":true,
+        "regex":"/.+/",
+        "trim":true
+    },
+    "hts_customs_unit_quantity":{
+        "required":false,
+        "regex":"/.+/",
+        "trim":true,
+        "default" : 1,
+        "cast" : "int"
+    }
+}

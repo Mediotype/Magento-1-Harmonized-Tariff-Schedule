@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mediotype_HarmonizedTarriffSchedule>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mediotype_Core/>
+                <Mediotype_Import/>
+                <Mage_Usa/>
+            </depends>
+        </Mediotype_HarmonizedTarriffSchedule>
+    </modules>
+</config>

@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<!--
+/**
+* Magento / Mediotype Harmonized Tariff Schedule Module - Manage International Commercial Invoices for Shipping
+* Designed to handle Harmonized Codes and Commercial Invoice Generation
+* Generates using FedExAPI & Also Local PDF if desired
+*
+* @category    Mediotype
+* @package     HarmonizedTariffSchedule
+* @copyright   Copyright (c) 2014 Mediotype (http://www.mediotype.com)
+*              Copyright, 2014, Mediotype, LLC - US license
+* @author      Joel Hart <joel@mediotype.com>
+*/
+-->
+<config>
+    <modules>
+        <Mediotype_HarmonizedTariffSchedule>
+            <version>0.1.8</version>
+        </Mediotype_HarmonizedTariffSchedule>
+    </modules>
+    <global>
+        <models>
+            <hts>
+                <class>Mediotype_HarmonizedTariffSchedule_Model</class>
+                <resourceModel>hts_resource</resourceModel>
+            </hts>
+            <hts_resource>
+                <class>Mediotype_HarmonizedTariffSchedule_Model_Resource</class>
+                <entities>
+                    <code>
+                        <table>harmonized_tariff_schedule_codes</table>
+                    </code>
+                </entities>
+            </hts_resource>
+            <usa>
+                <rewrite>
+                    <shipping_carrier_fedex>Mediotype_HarmonizedTariffSchedule_Model_Usa_Shipping_Carrier_Fedex</shipping_carrier_fedex>
+                </rewrite>
+            </usa>
+        </models>
+        <blocks>
+            <hts>
+                <class>Mediotype_HarmonizedTariffSchedule_Block</class>
+            </hts>
+            <adminhtml>
+                <rewrite>
+                    <sales_order_shipment_view_form>Mediotype_HarmonizedTariffSchedule_Block_Adminhtml_Sales_Order_Shipment_View_Form</sales_order_shipment_view_form>
+                    <sales_order_shipment_packaging>Mediotype_HarmonizedTariffSchedule_Block_Adminhtml_Sales_Order_Shipment_Packaging</sales_order_shipment_packaging>
+                    <sales_order_shipment_packaging_grid>Mediotype_HarmonizedTariffSchedule_Block_Adminhtml_Sales_Order_Shipment_Packaging_Grid</sales_order_shipment_packaging_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <helpers>
+            <hts>
+                <class>Mediotype_HarmonizedTariffSchedule_Helper</class>
+            </hts>
+        </helpers>
+        <resources>
+            <hts_setup>
+                <setup>
+                    <module>Mediotype_HarmonizedTariffSchedule</module>
+                    <class>Mage_Eav_Model_Entity_Setup</class>
+                </setup>
+            </hts_setup>
+        </resources>
+    </global>
+    <admin>
+        <routers>
+            <mediotype_hts>
+                <use>admin</use>
+                <args>
+                    <module>Mediotype_HarmonizedTariffSchedule</module>
+                    <frontName>harmonized_tariff_schedule</frontName>
+                </args>
+            </mediotype_hts>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <mediotype_hts before="Mage_Adminhtml">Mediotype_HarmonizedTariffSchedule_Adminhtml</mediotype_hts>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <sales translate="title" module="hts">
+                <children>
+                    <harmonized_tax_codes>
+                        <title>Harmonized Tariff Schedule</title>
+                        <sort_order>9999</sort_order>
+                        <children>
+                            <hts_import_codes>
+                                <title>Import Product Data</title>
+                                <action>harmonized_tariff_schedule/adminhtml_hts</action>
+                                <sort_order>1</sort_order>
+                            </hts_import_codes>
+                            <hts_manage_codes>
+                                <title>Manage Harmonized Tariff Schedule Codes</title>
+                                <action>harmonized_tariff_schedule/adminhtml_manage</action>
+                                <sort_order>1</sort_order>
+                            </hts_manage_codes>
+                        </children>
+                    </harmonized_tax_codes>
+                </children>
+            </sales>
+        </menu>
+        <layout>
+            <updates>
+                <hts>
+                    <file>mediotype/HarmonizedTariffSchedule.xml</file>
+                </hts>
+            </updates>
+        </layout>
+    </adminhtml>
+    <default>
+        <mediotype>
+            <instructions>
+                <hts_import>https://motherhsip.mediotype.com/magento/hts/import</hts_import>
+                <hts_manage>https://motherhsip.mediotype.com/magento/hts/manage</hts_manage>
+            </instructions>
+            <hts>
+                <carriers>
+                    <fedex>1</fedex>
+                </carriers>
+            </hts>
+        </mediotype>
+    </default>
+</config>
